@@ -23,4 +23,4 @@ plt.show()
 plt.plot(eixo_t, eixo_Nulog)
 plt.show()
 
-# 2. usar os mesmos parametros e integrar usando o metodo de Euler imp
+# 2. usar os mesmos parametros e integrar usando o método de Euler imp
