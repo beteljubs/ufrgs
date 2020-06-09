@@ -27,7 +27,7 @@ for i in range (0, 2000):
     t.append(t_n)
     u.append(u_n)
     u_ext.append(ext(t_n))
-    if t_n == 1:
+    if t_n > 1.9 and t_n < 2:
         print(u_n)  # print do valor encontrado quando t = 1
     u_n += h * f(t_n, u_n)
     t_n += h  # passo
