@@ -36,15 +36,22 @@ while (t_n <= tmax):
 
 titulo = "Método de Euler-Cromer"
 xlabel = "tempo"
-arquivo = "massa-mola_eulerc.png"
+arquivo1 = "massa-mola_eulerc1.png"
+arquivo2 = "massa-mola_eulerc2.png"
 
 plt.title(titulo)
 plt.xlabel(xlabel)
-
 plt.plot(t, x, label = "posição")
 plt.plot(t,v, label = "velocidade")
 plt.legend()
+plt.savefig(arquivo1)
+plt.show()
 
-plt.savefig(arquivo)
+xlabel = "posição"
+ylabel = "velocidade"
 
+plt.xlabel(xlabel)
+plt.ylabel(ylabel)
+plt.scatter(x, v, s=.5)
+plt.savefig(arquivo2)
 plt.show()
