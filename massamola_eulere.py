@@ -54,14 +54,15 @@ while (t_n <= tmax):
 titulo = "Método de Euler Explícito"
 xlabel = "tempo"
 arquivo1 = "massa-mola_eulere.png"
-arquivo2 = "massa-mola_eulere2"
+arquivo2 = "massa-mola_eulere2.png"
+arquivo3 = "massa-mola_eulere3.png"
 
 plt.title(titulo)
 plt.xlabel(xlabel)
 plt.plot(t, x, label = "posição")
 plt.plot(t, v, label = "velocidade")
 plt.legend()
-plt.savefig(arquivo1)
+#plt.savefig(arquivo1)
 plt.show()
 
 xlabel = "posição"
@@ -71,16 +72,16 @@ plt.title(titulo)
 plt.xlabel(xlabel)
 plt.ylabel(ylabel)
 plt.scatter(x, v, s=.5)
-plt.savefig(arquivo2)
+#plt.savefig(arquivo2)
 plt.show()
 
 xlabel = "tempo"
 ylabel = "(E(t) - E0)/E0"
-titulo = "energia x t"
+titulo = "Energia x t"
 
 plt.title(titulo)
 plt.xlabel(xlabel)
 plt.ylabel(ylabel)
 plt.plot(t, E, label = "Euler")
-#plt.savefig(arquivo)
+#plt.savefig(arquivo3)
 plt.show()
