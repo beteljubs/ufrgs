@@ -1,12 +1,13 @@
-# resolução da EDO dx/dt = x para x(0) = 1
+# resolução da EDO dx/dt = x para x(0) = 1 pelo Método de Euler Explícito
 # solução exata: t = exp(x)
 
 import matplotlib.pyplot as plt
 import numpy as np
 
 # função para o método de euler
-def f(u):
-    return u
+def f(u):  # dx/dt
+    f = u
+    return f
 
 # resultado exato da função
 def ext(t):
@@ -15,33 +16,42 @@ def ext(t):
 
 # problema de valor inicial
 # dx/dt = x; x(t = 0) = 1
-t_n = 0
-u_n = 1
-u_n_ext = 1
+t0 = 0
+x0 = 1
+xext0 = 1
+
+# valor do passo
+h = .0005
+
+tmax = 10000
 
 # listas de valores dos eixos
 t = []
-u = []
-u_ext = []
+x = []
+xext = []
 
-# valor do passo
-h = .01
+tn = t0
+xn = x0
+xnext = xext0
 
-for i in range (0, 2000):
+for i in range (0, tmax):
     # adicionando valores aos vetores
-    t.append(t_n)
-    u.append(f(u_n))
-    u_ext.append(ext(t_n))
-
-    # acrescentando aos valores
-    t_n += h
-    u_n += h * f(u_n)
+    t.append(tn)
+    x.append(xn)
+    xext.append(xnext)
+    if i == (4 / h):
+        print(xn)
+    xn += f(xn)*h
+    xnext = ext(tn)
+    tn += h
 
 # plot dos gráficos
-plt.plot(t, u)
-plt.plot(t, u_ext)
+plt.plot(t, x, label = "euler")
+plt.plot(t, xext, label = "analítico")
+plt.legend()
 plt.show()
 
+'''
 # print dos valores em um arquivo
 arq = open('valores.dat', 'w')
 
@@ -54,3 +64,4 @@ for i in range (0, 2000):
     arq.write(str_u_ext + "\n")
 
 arq.close()
+'''

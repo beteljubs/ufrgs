@@ -22,7 +22,7 @@ u = []
 t = []
 u_ext = []
 
-h = 0.01
+h = 0.001
 
 for i in range (0, 2000):
     t.append(t_n)
