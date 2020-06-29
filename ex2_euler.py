@@ -31,6 +31,10 @@ for i in range (0, 2000):
     u_n += f(t_n, u_n) * h
     t_n += h
 
-plt.plot(t, u)
-plt.plot(t, u_ext)
+lbl1 = "método de Euler"
+lbl2 = "solução analítica"
+
+plt.plot(t, u_ext, label= lbl2)
+plt.plot(t, u, label= lbl1)
+plt.legend()
 plt.show()
